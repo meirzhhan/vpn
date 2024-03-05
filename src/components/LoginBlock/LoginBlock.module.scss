@@ -1,0 +1,54 @@
+@import '../../scss/variables';
+
+.login {
+  @include flexCenterJustify;
+  gap: 150px;
+}
+.left {
+  @include flexColumn;
+  margin-top: 100px;
+  gap: 32px;
+  width: 350px;
+  h1 {
+    font-size: 40px;
+  }
+  // input[type='number']::-webkit-inner-spin-button {
+  //   appearance: none;
+  //   font-size: 32px;
+  // }
+  &__input {
+    all: unset;
+    @include borderAndPadding24;
+    background-color: #131417;
+    color: #bcc9db;
+    font-size: 18px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: 0.3s;
+    &:hover,
+    &:focus {
+      background-color: #1e2024;
+      border: 2px solid #33363d;
+    }
+  }
+
+  &__button {
+    @include resetButton;
+    @include borderAndPadding24;
+    @include flexCenterJustify;
+    font-size: 20px;
+    color: #1c1d22;
+    &:hover {
+      background-color: $greenHover;
+    }
+  }
+  p {
+    color: $green;
+    cursor: pointer;
+    display: flex;
+    justify-content: right;
+    &:hover {
+      color: $greenHover;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@import '../../scss/variables';
+.manager__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  font-size: 20px;
+}
+
+.manager {
+  @include borderAndPadding24;
+  background: rgba(188, 201, 219, 0.05);
+
+  // max-height: 800px;
+  // overflow: auto;
+  // padding-right: 10px;
+  // &::-webkit-scrollbar {
+  //   width: 5px;
+  // }
+  // &::-webkit-scrollbar-thumb {
+  //   background-color: $green;
+  //   border-radius: 24px;
+  // }
+}
+.user {
+  display: grid;
+  gap: 20px;
+
+  max-height: 850px;
+  overflow: auto;
+  padding-right: 10px;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $green;
+    border-radius: 24px;
+  }
+  &__item {
+    background: rgba(188, 201, 219, 0.05);
+    @include borderAndPadding24;
+    &:first-letter {
+      color: $green;
+    }
+  }
+}

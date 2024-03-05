@@ -1,0 +1,42 @@
+@import '../../scss/variables';
+.footer {
+  margin-top: 100px;
+  background-color: #131417;
+  color: #bcc9db;
+  border-radius: 24px 24px 0 0;
+  font-size: 15px;
+  padding: 60px;
+
+  &__container {
+    @include container;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+  }
+  &__left {
+    max-width: 450px;
+    font-size: 14px;
+  }
+  &__right {
+    display: flex;
+    gap: 120px;
+
+    div {
+      @include flexColumn;
+      gap: 10px;
+      padding-left: 20px;
+      border-left: 2px solid $green;
+      h1 {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      p {
+        transition: 0.3s;
+        cursor: pointer;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

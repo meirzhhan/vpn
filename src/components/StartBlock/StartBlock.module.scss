@@ -1,0 +1,49 @@
+@import '../../scss/variables';
+.start {
+  @include flexSpaceBetween;
+  padding: 0 24px;
+  &__wrapper {
+    @include flexColumn;
+    border-radius: 24px;
+    padding-top: 24px;
+    gap: 15px;
+    background: rgba(188, 201, 219, 0.05);
+    margin: 50px auto 0 auto;
+    width: 500px;
+    font-size: 18px;
+    li {
+      padding: 1px;
+      background-color: rgba(188, 201, 219, 0.15);
+    }
+  }
+
+  p:first-child {
+    opacity: 0.5;
+  }
+}
+
+.info {
+  @include flexColumn;
+  position: relative;
+
+  gap: 20px;
+  border-radius: 24px;
+  padding: 24px;
+  background-color: #1e2024;
+  button {
+    @include resetButton;
+    padding: 12px;
+    color: $green;
+    background-color: transparent;
+    border: 2px solid $green;
+    width: 100%;
+    &:hover {
+      background-color: $green;
+      color: #131417;
+    }
+  }
+  &__loading {
+    position: absolute;
+    right: 24px;
+  }
+}

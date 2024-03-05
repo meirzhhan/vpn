@@ -1,0 +1,37 @@
+@import '../../scss/variables';
+
+.first {
+  @include flexSpaceBetween;
+  font-size: 18px;
+  &__info {
+    @include flexColumn;
+    margin-top: 60px;
+    gap: 32px;
+    h1 {
+      font-size: 54px;
+      max-width: 500px;
+    }
+    &__points {
+      display: flex;
+      gap: 16px;
+      li {
+        @include borderAndPadding24;
+        font-size: 20px;
+        background-color: #393c42;
+      }
+    }
+    &__platforms {
+      @include flexAlignItems;
+      @include borderAndPadding24;
+      background-color: #131417;
+      gap: 50px;
+      width: fit-content;
+      li {
+        @include flexAlignItems;
+        @include borderAndPadding24;
+        gap: 12px;
+        border: 2px solid $green;
+      }
+    }
+  }
+}

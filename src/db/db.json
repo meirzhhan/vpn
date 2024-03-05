@@ -1,0 +1,86 @@
+[
+  {
+    "id": 9999,
+    "role": "admin",
+    "phone": 123,
+    "username": "admin",
+    "password": "admin"
+  },
+  {
+    "id": 0,
+    "role": "user",
+    "phone": 87076002075,
+    "username": "meirzhhan",
+    "password": "meirzhhan"
+  },
+  {
+    "id": 1,
+    "role": "user",
+    "phone": 87076002076,
+    "username": "skyjinx",
+    "password": "p@ssw0rd"
+  },
+  {
+    "id": 2,
+    "role": "user",
+    "phone": 87076002077,
+    "username": "frosty",
+    "password": "secure123"
+  },
+  {
+    "id": 3,
+    "role": "user",
+    "phone": 87076002078,
+    "username": "swift",
+    "password": "letmein"
+  },
+  {
+    "id": 4,
+    "role": "user",
+    "phone": 87076002079,
+    "username": "blazex",
+    "password": "password123"
+  },
+  {
+    "id": 5,
+    "role": "user",
+    "phone": 87076002080,
+    "username": "zephyr",
+    "password": "12345678"
+  },
+  {
+    "id": 6,
+    "role": "user",
+    "phone": 87076002081,
+    "username": "ember",
+    "password": "welcome1"
+  },
+  {
+    "id": 7,
+    "role": "user",
+    "phone": 87076002082,
+    "username": "leaf",
+    "password": "changeme"
+  },
+  {
+    "id": 8,
+    "role": "user",
+    "phone": 87076002083,
+    "username": "bytee",
+    "password": "password"
+  },
+  {
+    "id": 9,
+    "role": "user",
+    "phone": 87076002084,
+    "username": "boltx",
+    "password": "admin123"
+  },
+  {
+    "id": 10,
+    "role": "user",
+    "phone": 87076002085,
+    "username": "miko",
+    "password": "123456"
+  }
+]

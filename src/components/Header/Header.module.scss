@@ -1,0 +1,42 @@
+@import '../../scss/variables';
+.header {
+  @include container;
+  @include flexSpaceBetweenAndAlignItems;
+  padding: 25px 0;
+  font-size: 32px;
+  margin-bottom: 25px;
+  a {
+    color: #fff;
+  }
+  &__left {
+    font-weight: bold;
+    p {
+      font-size: 16px;
+      opacity: 0.5;
+    }
+  }
+  &__right {
+    @include flexAlignItems;
+    font-weight: 600;
+    color: #fff;
+    gap: 50px;
+  }
+  &__profile {
+    @include flexAlignItems;
+    font-size: 18px;
+    img {
+      width: 30px;
+      height: 30px;
+      margin-right: 15px;
+    }
+  }
+  &__button {
+    @include resetButton;
+    @include flexAlignItems;
+    color: #131417 !important;
+    padding: 15px 25px;
+    text-align: center;
+    gap: 20px;
+    letter-spacing: 0.1em;
+  }
+}

@@ -1,0 +1,53 @@
+@import '../../scss/variables';
+.second {
+  @include container;
+  @include flexColumn;
+  margin-top: 150px;
+  gap: 50px;
+  font-size: 20px;
+  h1 {
+    letter-spacing: 0.2em;
+    max-width: 700px;
+  }
+  .title {
+    opacity: 0.6;
+  }
+  ul {
+    @include flexCenterJustify;
+    flex-wrap: wrap;
+    gap: 40px 80px;
+    li {
+      @include flexAlignItems;
+      @include flexColumn;
+      @include flexCenterJustify;
+      background-color: #131417;
+      gap: 30px;
+      width: 320px;
+      height: 320px;
+      border-radius: 24px;
+      text-align: center;
+      cursor: default;
+      .discount {
+        @include resetButton;
+        padding: 12px 16px;
+        color: #000;
+        cursor: default;
+      }
+      .price {
+        font-size: 54px;
+        font-weight: 600;
+      }
+    }
+  }
+  &__bottom {
+    color: #fff;
+    border-radius: 12px;
+    padding: 5px 0;
+    background-color: $green;
+    text-align: center;
+    letter-spacing: 0.5em;
+  }
+}
+.top {
+  opacity: 0.4;
+}

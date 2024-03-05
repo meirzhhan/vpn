@@ -1,0 +1,34 @@
+@import './variables';
+.App {
+  background-color: #25262a;
+  color: #bcc9db;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Nunito', sans-serif;
+}
+
+.sections,
+.login,
+.start,
+.manager-container {
+  @include container;
+}
+
+.activeQuestion {
+  span {
+    color: #fff;
+  }
+  img {
+    transform: rotate(0deg) !important;
+  }
+}
+.activeCountry {
+  background: rgba(188, 201, 219, 0.2) !important;
+  border-color: $green !important;
+}

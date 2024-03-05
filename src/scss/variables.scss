@@ -1,0 +1,48 @@
+$green: #4cd0a1;
+$greenHover: #28f1a9;
+
+@mixin container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+@mixin resetButton {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  background-color: $green;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+@mixin flexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin flexAlignItems {
+  display: flex;
+  align-items: center;
+}
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+@mixin flexCenterJustify {
+  display: flex;
+  justify-content: center;
+}
+@mixin flexSpaceBetweenAndAlignItems {
+  @include flexSpaceBetween;
+  @include flexAlignItems;
+}
+
+@mixin borderAndPadding24 {
+  border-radius: 24px;
+  padding: 24px;
+}
