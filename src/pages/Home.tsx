@@ -1,7 +1,7 @@
-import CountryBlock from '../components/CountryBlock/CountryBlock';
-import First from '../components/SectionFirst/First';
-import Second from '../components/SectionSecond/Second';
-import Third from '../components/SectionThird/Third';
+import CountryBlock from "../components/CountryBlock/CountryBlock";
+import First from "../components/SectionFirst/First";
+import Second from "../components/SectionSecond/Second";
+import Third from "../components/SectionThird/Third";
 
 const Home = () => {
   return (
@@ -9,6 +9,7 @@ const Home = () => {
       <First />
       <Second />
       <Third />
+
       <CountryBlock />
     </div>
   );
