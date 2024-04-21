@@ -1,35 +1,35 @@
-import cl from './LoginBlock.module.scss';
+import cl from "./LoginBlock.module.scss";
 
-import personsDb from '../../db/db.json';
+import personsDb from "../../db/db.json";
 
-import devicesImg from '../../assets/devices.png';
-import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
-import { TLoginProps } from '../../pages/Login';
+import devicesImg from "../../assets/devices.png";
+import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { TLoginProps } from "../../pages/Login";
 
 const LoginBlock: React.FC<TLoginProps> = ({ setIsLogged }) => {
   const navigate = useNavigate();
-  const [loginValue, setLoginValue] = useState('');
-  const [passValue, setPassValue] = useState('');
+  const [loginValue, setLoginValue] = useState("");
+  const [passValue, setPassValue] = useState("");
 
   const onClickLogin = () => {
     const person = personsDb.find(
       (item) =>
         item.phone === Number(loginValue) ||
-        (item.username === loginValue && item.password === passValue),
+        (item.username === loginValue && item.password === passValue)
     );
 
-    if (person && person.role === 'admin') {
-      navigate('/');
-      console.log('admin logged');
-      setIsLogged(true);
+    if (person && person.role === "admin") {
+      navigate("/manager");
+      console.log("admin logged");
+      setIsLogged("admin");
     }
-    if (person && person.role === 'user') {
-      navigate('/start');
-      console.log('user logged');
-      setIsLogged(true);
+    if (person && person.role === "user") {
+      navigate("/start");
+      console.log("user logged");
+      setIsLogged("user");
     } else {
-      // alert('ошибочка');
+      // alert("incorrect login or password");
     }
   };
 

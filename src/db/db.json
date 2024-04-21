@@ -7,11 +7,20 @@
     "password": "admin"
   },
   {
+    "id": 999,
+    "role": "admin",
+    "phone": "1234",
+    "username": "admin2",
+    "password": "admin2"
+  },
+
+  {
     "id": 0,
     "role": "user",
     "phone": 87076002075,
     "username": "meirzhhan",
-    "password": "meirzhhan"
+    "password": "meirzhhan",
+    "managerId": "9999"
   },
   {
     "id": 1,

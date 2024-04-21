@@ -1,12 +1,12 @@
-import cl from './Header.module.scss';
+import cl from "./Header.module.scss";
 
-import profileImg from '../../assets/profile.png';
-import rocketSvg from '../../assets/rocket.svg';
-import { Link, useLocation } from 'react-router-dom';
-import React from 'react';
+import profileImg from "../../assets/profile.png";
+import rocketSvg from "../../assets/rocket.svg";
+import { Link, useLocation } from "react-router-dom";
+import React from "react";
 
 type TProps = {
-  isLogged: boolean;
+  isLogged: string;
 };
 
 const Header: React.FC<TProps> = ({ isLogged }) => {
@@ -18,13 +18,16 @@ const Header: React.FC<TProps> = ({ isLogged }) => {
         VPN
         <p>.kz</p>
       </Link>
-      {location.pathname === '/' && (
+      {location.pathname === "/" && (
         <div className={cl.header__right}>
           <Link to="/login" className={cl.header__profile}>
             <img src={profileImg} alt="Profile" />
             <p>Войти</p>
           </Link>
-          <Link to={isLogged ? '/start' : '/login'} className={cl.header__button}>
+          <Link
+            to={isLogged ? "/start" : "/login"}
+            className={cl.header__button}
+          >
             НАЧАТЬ
             <img src={rocketSvg} alt="" />
           </Link>
