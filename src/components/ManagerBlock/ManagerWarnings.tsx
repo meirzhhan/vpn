@@ -5,6 +5,7 @@ const ManagerWarnings = () => {
   return (
     <div className={cl.manager}>
       {ai.map(({ text }, index) => (
+        // @ts-ignore
         <div ai="alert alert-ai">{text}</div>
       ))}
     </div>

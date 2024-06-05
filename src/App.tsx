@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header isLogged={isLogged} />
+      <Header setIsLogged={setIsLogged} isLogged={isLogged} />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -30,7 +30,8 @@ function App() {
           }
         />
 
-        {isLogged === 'user' && (
+        {localStorage.getItem('role') === 'user' && (
+          // {isLogged === 'user' && (
           <Route
             path="/start"
             element={
@@ -40,7 +41,8 @@ function App() {
             }
           />
         )}
-        {isLogged === 'admin' && (
+        {localStorage.getItem('role') === 'admin' && (
+          // {isLogged === 'admin' && (
           <Route
             path="/manager"
             element={

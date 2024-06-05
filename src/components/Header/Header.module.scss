@@ -40,3 +40,11 @@
     letter-spacing: 0.1em;
   }
 }
+
+.logoutBtn {
+  @include resetButton;
+  color: red;
+  background: none;
+  font-size: 20px;
+  // cursor: pointer;
+}

@@ -1,11 +1,11 @@
 import React from 'react';
 import LoginBlock from '../components/LoginBlock/LoginBlock';
 
-export type TLoginProps = {
+export interface TLoginProps {
   setIsLogged: (isLogged: string) => void;
-};
+}
 
-const Login: React.FC<TLoginProps> = ({ setIsLogged }) => {
+const Login = ({ setIsLogged }: TLoginProps) => {
   return (
     <div className="login">
       <LoginBlock setIsLogged={setIsLogged} />

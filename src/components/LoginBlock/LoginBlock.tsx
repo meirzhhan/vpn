@@ -4,13 +4,25 @@ import personsDb from '../../db/db.json';
 
 import devicesImg from '../../assets/devices.png';
 import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TLoginProps } from '../../pages/Login';
 
 const LoginBlock: React.FC<TLoginProps> = ({ setIsLogged }) => {
   const navigate = useNavigate();
   const [loginValue, setLoginValue] = useState('');
   const [passValue, setPassValue] = useState('');
+
+  useEffect(() => {
+    const isUserAuth =
+      localStorage.getItem('role') === 'user' ? 'user' : 'admin';
+
+    if (isUserAuth === 'user') {
+      setIsLogged(isUserAuth);
+    }
+    if (isUserAuth === 'admin') {
+      setIsLogged(isUserAuth);
+    }
+  }, [setIsLogged]);
 
   const onClickLogin = () => {
     const person = personsDb.find(
@@ -23,13 +35,15 @@ const LoginBlock: React.FC<TLoginProps> = ({ setIsLogged }) => {
       navigate('/manager');
       console.log('admin logged');
       setIsLogged('admin');
+      localStorage.setItem('role', 'admin');
     }
     if (person && person.role === 'user') {
       navigate('/start');
       console.log('user logged');
       setIsLogged('user');
+      localStorage.setItem('role', 'user');
     } else {
-      // alert("incorrect login or password");
+      alert('incorrect login or password');
     }
   };
 
