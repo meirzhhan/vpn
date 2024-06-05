@@ -1,18 +1,18 @@
-import "./scss/app.scss";
+import './scss/app.scss';
 
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
 
-import Header from "./components/Header/Header";
+import Header from './components/Header/Header';
 
-import Home from "./pages/Home";
-import { Suspense, useState } from "react";
-import Login from "./pages/Login";
-import Footer from "./components/Footer/Footer";
-import Start from "./pages/Start";
-import Manager from "./pages/Manager";
+import Home from './pages/Home';
+import { Suspense, useState } from 'react';
+import Login from './pages/Login';
+import Footer from './components/Footer/Footer';
+import Start from './pages/Start';
+import Manager from './pages/Manager';
 
 function App() {
-  const [isLogged, setIsLogged] = useState("");
+  const [isLogged, setIsLogged] = useState('');
 
   return (
     <div className="App">
@@ -30,7 +30,7 @@ function App() {
           }
         />
 
-        {isLogged === "user" && (
+        {isLogged === 'user' && (
           <Route
             path="/start"
             element={
@@ -40,7 +40,7 @@ function App() {
             }
           />
         )}
-        {isLogged === "admin" && (
+        {isLogged === 'admin' && (
           <Route
             path="/manager"
             element={

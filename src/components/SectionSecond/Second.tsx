@@ -35,7 +35,9 @@ const Second = () => {
       <ul>
         {plans.map((plan, index) => (
           <li key={index}>
-            {plan.discount && <span className={cl.discount}>Экономия {plan.discount} %</span>}
+            {plan.discount && (
+              <span className={cl.discount}>Экономия {plan.discount} %</span>
+            )}
             <div>
               <span className={cl.price}>{plan.price} ₸</span>
               <p className={cl.top}>/ мес.</p>

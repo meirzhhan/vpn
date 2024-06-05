@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import cl from "./StartBlock.module.scss";
-import clCountry from "../CountryBlock/CountryBlock.module.scss";
+import React, { useState } from 'react';
+import cl from './StartBlock.module.scss';
+import clCountry from '../CountryBlock/CountryBlock.module.scss';
 
-import loadingSvg from "../../assets/loading.svg";
+import loadingSvg from '../../assets/loading.svg';
 
-import { countryUrls } from "../CountryBlock/CountryBlock";
+import { countryUrls } from '../CountryBlock/CountryBlock';
 
 type TProps = {
   activeCountry: string;
@@ -26,15 +26,15 @@ const StartBlock: React.FC<TProps> = ({
     setIsWorking(true);
     setTimeout(() => {
       setIsOn(!isOn);
-      console.log("1");
+      console.log('1');
       setIsWorking(false);
     }, 2000);
-    console.log("2");
-    const url = "http://localhost:8000/connect-vpn";
+    console.log('2');
+    const url = 'http://localhost:8000/connect-vpn';
 
     fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       //  body: JSON.stringify({ serverIp: "219.100.37.180" }), // Add the server IP to the body
     })
       .then((response) => response.text())
@@ -42,7 +42,7 @@ const StartBlock: React.FC<TProps> = ({
         console.log(data);
       })
       .catch((error) => {
-        console.error("Ошибка обновления позиции ", error);
+        console.error('Ошибка обновления позиции ', error);
       });
   };
 
@@ -51,7 +51,7 @@ const StartBlock: React.FC<TProps> = ({
     <div className={cl.start__wrapper}>
       <div className={cl.start}>
         <p>Статус:</p>
-        <p>{isOn ? "Подключено" : "Отключено"}</p>
+        <p>{isOn ? 'Подключено' : 'Отключено'}</p>
       </div>
       <li></li>
       <div className={cl.start}>
@@ -68,10 +68,10 @@ const StartBlock: React.FC<TProps> = ({
         <div
           className={clCountry.country}
           style={{
-            background: "transparent",
-            border: "none",
-            cursor: "default",
-            padding: "0",
+            background: 'transparent',
+            border: 'none',
+            cursor: 'default',
+            padding: '0',
           }}
         >
           <div className={clCountry.country__img}>
@@ -87,7 +87,7 @@ const StartBlock: React.FC<TProps> = ({
         </div>
 
         <button onClick={onClickStart} disabled={isWorking}>
-          {!isLoading && !isOn ? "Подключить" : "Отключить"}
+          {!isLoading && !isOn ? 'Подключить' : 'Отключить'}
           {/* {!isOn ? 'Подключить' : 'Отключить'} */}
         </button>
       </div>

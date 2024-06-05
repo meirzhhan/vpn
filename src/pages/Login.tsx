@@ -1,5 +1,5 @@
-import React from "react";
-import LoginBlock from "../components/LoginBlock/LoginBlock";
+import React from 'react';
+import LoginBlock from '../components/LoginBlock/LoginBlock';
 
 export type TLoginProps = {
   setIsLogged: (isLogged: string) => void;
