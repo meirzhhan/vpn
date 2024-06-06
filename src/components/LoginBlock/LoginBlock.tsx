@@ -25,26 +25,35 @@ const LoginBlock: React.FC<TLoginProps> = ({ setIsLogged }) => {
   }, [setIsLogged]);
 
   const onClickLogin = () => {
-    const person = personsDb.find(
-      (item) =>
-        item.phone === Number(loginValue) ||
-        (item.username === loginValue && item.password === passValue),
-    );
+    const locolDb = localStorage.getItem('db')
+      ? localStorage.getItem('db')
+      : JSON.stringify(personsDb);
+    if (locolDb !== null) {
+      const person = JSON.parse(locolDb).find(
+        (item: any) =>
+          item.phone === Number(loginValue) ||
+          (item.username === loginValue && item.password === passValue),
+      );
 
-    if (person && person.role === 'admin') {
-      navigate('/manager');
-      console.log('admin logged');
-      setIsLogged('admin');
-      localStorage.setItem('role', 'admin');
+      if (person && person.role === 'admin') {
+        navigate('/manager');
+        console.log('admin logged');
+        setIsLogged('admin');
+        localStorage.setItem('role', 'admin');
+      }
+      if (person && person.role === 'user') {
+        navigate('/start');
+        console.log('user logged');
+        setIsLogged('user');
+        localStorage.setItem('role', 'user');
+      } else {
+        alert('incorrect login or password');
+      }
     }
-    if (person && person.role === 'user') {
-      navigate('/start');
-      console.log('user logged');
-      setIsLogged('user');
-      localStorage.setItem('role', 'user');
-    } else {
-      alert('incorrect login or password');
-    }
+  };
+
+  const goToReg = () => {
+    navigate('/reg');
   };
 
   return (
@@ -68,7 +77,7 @@ const LoginBlock: React.FC<TLoginProps> = ({ setIsLogged }) => {
         <button className={cl.left__button} onClick={onClickLogin}>
           Войти
         </button>
-        <p>Создать аккаунт</p>
+        <p onClick={goToReg}>Создать аккаунт</p>
       </div>
       <img src={devicesImg} alt="Devices" />
     </div>

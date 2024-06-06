@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import Footer from './components/Footer/Footer';
 import Start from './pages/Start';
 import Manager from './pages/Manager';
+import Reg from './pages/Reg';
 
 function App() {
   const [isLogged, setIsLogged] = useState('');
@@ -26,6 +27,14 @@ function App() {
           element={
             <Suspense fallback={<></>}>
               <Login setIsLogged={setIsLogged} />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/reg"
+          element={
+            <Suspense fallback={<></>}>
+              <Reg setIsLogged={setIsLogged} />
             </Suspense>
           }
         />
