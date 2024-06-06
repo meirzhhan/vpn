@@ -3,9 +3,9 @@ import CountryBlock from '../components/CountryBlock/CountryBlock';
 import StartBlock from '../components/StartBlock/StartBlock';
 
 const Start = () => {
-  const [activeCountry, setActiveCountry] = useState('Казахстан');
-  const [activeCity, setActiveCity] = useState('Алматы');
-  const [activeUrl, setActiveUrl] = useState(7);
+  const [activeCountry, setActiveCountry] = useState('США');
+  const [activeCity, setActiveCity] = useState('Даллас');
+  const [activeUrl, setActiveUrl] = useState(0);
 
   const [isLoading, setIsLoading] = useState(false);
 

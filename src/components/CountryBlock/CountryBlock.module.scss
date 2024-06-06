@@ -30,8 +30,17 @@
   }
 
   &__info {
-    span {
-      font-size: 20px;
+    &__ss {
+      display: flex;
+      width: 300px;
+      // justify-content: space-between;
+      position: relative;
+      p {
+        // left: auto;
+        position: absolute;
+        color: red;
+        right: 0;
+      }
     }
     p {
       font-size: 18px;
@@ -39,3 +48,19 @@
     }
   }
 }
+
+.nice {
+  // opacity: b;
+  background: rgba(255, 0, 0, 0.05);
+}
+
+.notNice {
+  .qq {
+    color: green;
+  }
+}
+
+// .qq {
+//   margin-left: auto;
+//   left: auto;
+// }

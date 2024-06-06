@@ -1,5 +1,6 @@
 import cl from './CountryBlock.module.scss';
 
+import usaSvg from '../../assets/countries/usa.svg';
 import norwaySvg from '../../assets/countries/norway.svg';
 import germanySvg from '../../assets/countries/germany.svg';
 import netherlandsSvg from '../../assets/countries/netherlands.svg';
@@ -22,7 +23,7 @@ type TProps = Partial<{
 }>;
 
 export const countryUrls = [
-  norwaySvg,
+  usaSvg,
   germanySvg,
   netherlandsSvg,
   austriaSvg,
@@ -33,20 +34,33 @@ export const countryUrls = [
   russiaSvg,
 ];
 
-const CountryBlock: React.FC<TProps> = ({ activeCountry, set, managerStyle }) => {
+const CountryBlock: React.FC<TProps> = ({
+  activeCountry,
+  set,
+  managerStyle,
+}) => {
   return (
     <div className={cl.country__wrapper} style={managerStyle}>
-      {countries.map(({ name, city }, index) => (
+      {countries.map(({ name, city, availability }, index) => (
         <div
-          className={`${activeCountry === name ? cl.country + ' activeCountry' : cl.country}`}
+          className={`${
+            activeCountry === name ? cl.country + ' activeCountry' : cl.country
+          } ${availability ? 'notNice' : cl.nice}`}
           key={index}
-          onClick={() => set && set(name, city, index)}>
+          onClick={() => set && set(name, city, index)}
+        >
           <div className={cl.country__img}>
-            {countryUrls.map((img, id) => index === id && <img key={id} src={img} alt=""></img>)}
+            {countryUrls.map(
+              (img, id) =>
+                index === id && <img key={id} src={img} alt=""></img>,
+            )}
           </div>
 
           <div className={cl.country__info}>
-            <span>{name}</span>
+            <div className={cl.country__info__ss}>
+              <span>{name}</span>
+              <p className={cl.qq}>{availability ? 'Доступно' : 'Скоро'}</p>
+            </div>
             <p>{city}</p>
           </div>
         </div>

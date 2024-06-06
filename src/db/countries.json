@@ -1,38 +1,47 @@
 [
   {
-    "name": "Норвегия",
-    "city": "Осло"
+    "name": "США",
+    "city": "Даллас",
+    "availability": true
   },
   {
     "name": "Германия",
-    "city": "Франкфурт"
+    "city": "Франкфурт",
+    "availability": false
   },
   {
     "name": "Нидерланды",
-    "city": "Амстердам"
+    "city": "Амстердам",
+    "availability": false
   },
   {
     "name": "Австрия",
-    "city": "Вена"
+    "city": "Вена",
+    "availability": false
   },
   {
     "name": "ОАЭ",
-    "city": "Абу-Даби"
+    "city": "Абу-Даби",
+    "availability": false
   },
   {
     "name": "Канада",
-    "city": "Торонто"
+    "city": "Торонто",
+    "availability": false
   },
   {
     "name": "Великобритания",
-    "city": "Лондон"
+    "city": "Лондон",
+    "availability": false
   },
   {
     "name": "Казахстан",
-    "city": "Алматы"
+    "city": "Алматы",
+    "availability": false
   },
   {
     "name": "Россия",
-    "city": "Москва"
+    "city": "Москва",
+    "availability": false
   }
 ]
