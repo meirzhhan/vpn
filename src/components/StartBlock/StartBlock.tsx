@@ -30,20 +30,35 @@ const StartBlock: React.FC<TProps> = ({
       setIsWorking(false);
     }, 2000);
     console.log('2');
-    const url = 'http://localhost:8000/connect-vpn';
-
-    fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      //  body: JSON.stringify({ serverIp: "219.100.37.180" }), // Add the server IP to the body
-    })
-      .then((response) => response.text())
-      .then((data) => {
-        console.log(data);
+    if (!isOn) {
+      const url = 'http://localhost:8000/connect-vpn';
+      fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        //  body: JSON.stringify({ serverIp: "219.100.37.180" }), // Add the server IP to the body
       })
-      .catch((error) => {
-        console.error('Ошибка обновления позиции ', error);
-      });
+        .then((response) => response.text())
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((error) => {
+          console.error('Ошибка обновления позиции ', error);
+        });
+    } else {
+      const url = 'http://localhost:8000/disconnect-vpn';
+      fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        //  body: JSON.stringify({ serverIp: "219.100.37.180" }), // Add the server IP to the body
+      })
+        .then((response) => response.text())
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((error) => {
+          console.error('Ошибка обновления позиции ', error);
+        });
+    }
   };
 
   const xd = countryUrls[activeUrl];
